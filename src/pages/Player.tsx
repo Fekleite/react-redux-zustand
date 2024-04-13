@@ -3,21 +3,16 @@ import { MessageCircle } from "lucide-react";
 import { Header } from "../components/Header";
 import { Video } from "../components/Video";
 import { Module } from "../components/Module";
-import { useAppSelector } from "../store";
+import { useAppSelector, useAppDispatch } from "../store";
 import { useEffect } from "react";
-import { api } from "../lib/axios";
-import { useDispatch } from "react-redux";
-import { start } from "../store/slices/player";
+import { loadCourse } from "../store/slices/player";
 
 export function Player() {
-  const dispatch = useDispatch()
-
+  const dispatch = useAppDispatch()
   const modules = useAppSelector(state => state.player.course?.modules)
 
   useEffect(() => {
-    api.get('/courses/1').then(response => {
-      dispatch(start(response.data))
-    })
+    dispatch(loadCourse())
   }, [dispatch]);
 
   return (

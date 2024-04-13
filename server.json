@@ -1,10 +1,10 @@
 {
   "courses": [
     {
-      "id": 1,
+      "id": "1",
       "modules": [
         {
-          "id": 1,
+          "id": "1",
           "title": "Iniciando com React",
           "lessons": [
             {
@@ -40,7 +40,7 @@
           ]
         },
         {
-          "id": 2,
+          "id": "2",
           "title": "Estrutura da aplicação",
           "lessons": [
             {
